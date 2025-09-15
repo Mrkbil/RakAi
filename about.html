@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Rak.AI</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #4338ca;
+      --secondary: #06b6d4;
+      --accent: #f97316;
+      --light: #f8fafc;
+      --dark: #0f172a;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%);
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .team-member-card {
+      transition: all 0.3s ease;
+    }
+
+    .team-member-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .social-link {
+      transition: color 0.3s ease;
+    }
+    
+    .social-link:hover {
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white/90 backdrop-blur-md shadow-sm">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center">
+          <div id="logo-container" class="text-2xl font-bold text-gradient"></div>
+        </div>
+        <nav class="hidden lg:block">
+          <ul id="desktop-nav-links" class="flex space-x-10">
+            <!-- Desktop navigation links will be injected here -->
+          </ul>
+        </nav>
+        <div id="header-buttons-desktop" class="hidden md:flex items-center space-x-4">
+          <!-- Desktop header buttons will be injected here -->
+        </div>
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="p-2 rounded-md text-gray-700 hover:text-indigo-600 focus:outline-none">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden hidden bg-white shadow-lg animate__animated animate__fadeIn">
+      <div id="mobile-nav-links" class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <!-- Mobile navigation links will be injected here -->
+      </div>
+    </div>
+  </header>
+
+  <!-- About Us Hero -->
+  <section class="pt-32 pb-20 md:pt-40 md:pb-20 gradient-bg">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="hero-content" class="text-center">
+        <!-- Hero content will be injected here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="story-content" class="flex flex-col lg:flex-row items-center gap-12">
+        <!-- Story content will be injected here -->
+      </div>
+    </div>
+  </section>
+  
+  <!-- Founders Section -->
+  <section class="py-20 gradient-bg">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="team-header" class="text-center mb-16">
+        <!-- Team header will be injected here -->
+      </div>
+      <div id="team-members-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+        <!-- Team members will be dynamically injected here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us CTA -->
+  <section class="py-20 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white">
+    <div id="cta-content" class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- CTA content will be injected here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 pt-16 pb-8 text-gray-400">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div id="footer-about"></div>
+        <div id="footer-product-links"></div>
+        <div id="footer-company-links"></div>
+        <div id="footer-contact"></div>
+      </div>
+      <div class="border-t border-gray-800 pt-8">
+        <div id="footer-legal" class="flex flex-col md:flex-row justify-between items-center">
+          <!-- Footer legal info will be injected here -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const pageData = {
+      header: {
+        logoText: "Rak.AI",
+        navLinks: [
+          { name: "Solutions", href: "index.html#solutions" },
+          { name: "Features", href: "index.html#features" },
+          { name: "About Us", href: "about.html", active: true },
+          { name: "Pricing", href: "index.html#pricing" },
+          { name: "Testimonials", href: "index.html#testimonials" },
+          { name: "Resources", href: "index.html#resources" }
+        ],
+        buttons: [
+           { name: "Log in", class: "px-4 py-2 text-sm font-medium rounded-lg text-indigo-600 hover:text-indigo-700 transition-colors" },
+           { name: "Get Started", class: "px-6 py-2 text-sm font-medium rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition-colors shadow-md hover:shadow-lg" }
+        ]
+      },
+      hero: {
+        title: "We're on a mission to <span class='text-gradient'>revolutionize business intelligence</span>",
+        subtitle: "Rak.AI was founded on the belief that artificial intelligence should be accessible, actionable, and a catalyst for growth for businesses of all sizes. We are a team of innovators, thinkers, and builders passionate about creating the future of AI in the enterprise."
+      },
+      story: {
+        title: "Our Story",
+        paragraphs: [
+          "Founded in 2022 by a group of data scientists and business strategists, Rak.AI was born out of a shared frustration. We saw countless businesses struggling to harness the power of their data, bogged down by complex tools and a lack of actionable insights. We knew there had to be a better way.",
+          "Our journey began in a small garage, fueled by coffee and a relentless drive to democratize AI. We envisioned a platform that was not only powerful but also intuitive, a tool that could empower any team to make data-driven decisions with confidence.",
+          "Today, Rak.AI is a leader in advanced AI solutions, trusted by over 2,000 companies worldwide. While our team has grown, our core mission remains the same: to empower businesses with intelligent tools that drive growth and innovation."
+        ],
+        image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      },
+      team: {
+        title: "Meet Our Team",
+        subtitle: "The visionaries behind Rak.AI's mission.",
+        members: [
+  {
+    name: "Rakibul Islam",
+    title: "Founder & Business Strategist",
+    bio: "Rakibul drives the strategic vision of our company, focusing on sustainable growth, business innovation, and building long-term partnerships.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLS0yM0L2L3tEeHdE6glDaI_YrFFIsoMI9vg&s",
+    social: {
+      linkedin: "#",
+      email: "mailto:rakibul.islam@rak.ai"
+    }
+  },
+  {
+    name: "Md Alamin",
+    title: "Head of Education & AI Research",
+    bio: "Alamin leads our education initiatives and AI research, bridging academic excellence with cutting-edge innovation to shape the future of learning.",
+    image: "https://avatars.githubusercontent.com/u/95652193?v=4",
+    social: {
+      linkedin: "#",
+      email: "mailto:alamin@rak.ai"
+    }
+  },
+  {
+    name: "Muzahidul Islam",
+    title: "Head of Data Science",
+    bio: "Muzahidul oversees our data science division, transforming complex data into actionable insights that power innovation and smarter decision-making.",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQHLFfcvfbAe-g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726511792542?e=1760572800&v=beta&t=R1arKyuOXfzWPsORrqrGvNzpJRH_qo2mITimo6vegpg",
+    social: {
+      linkedin: "#",
+      email: "mailto:muzahidul.islam@rak.ai"
+    }
+  },
+  {
+    name: "Miad Bhuiyan",
+    title: "Head of Product Development",
+    bio: "Miad drives product development, combining technical expertise and user-focused design to deliver impactful, scalable, and market-ready solutions.",
+    image: "https://avatars.githubusercontent.com/u/82972473?v=4",
+    social: {
+      linkedin: "#",
+      email: "mailto:miad.bhuiyan@rak.ai"
+    }
+  }
+]
+
+      },
+      cta: {
+          title: "Join Our Team",
+          subtitle: "We're always looking for passionate and talented individuals to join our mission. If you're excited about the future of AI, we'd love to hear from you.",
+          buttonText: "View Open Positions"
+      },
+      footer: {
+        about: {
+            logoText: "Rak.AI",
+            description: "Empowering businesses with intelligent AI solutions to drive growth and innovation.",
+            socials: [
+                { name: "facebook", icon: "fab fa-facebook-f", href: "#" },
+                { name: "twitter", icon: "fab fa-twitter", href: "#" },
+                { name: "instagram", icon: "fab fa-instagram", href: "#" },
+                { name: "linkedin", icon: "fab fa-linkedin-in", href: "#" }
+            ]
+        },
+        linkColumns: [
+          {
+            title: "Product",
+            links: [
+              { name: "Features", href: "#" }, { name: "Solutions", href: "#" },
+              { name: "Pricing", href: "#" }, { name: "Integrations", href: "#" },
+              { name: "API", href: "#" }, { name: "Documentation", href: "#" }
+            ]
+          },
+          {
+            title: "Company",
+            links: [
+              { name: "About Us", href: "#" }, { name: "Customers", href: "#" },
+              { name: "Careers", href: "#" }, { name: "Blog", href: "#" },
+              { name: "Press", href: "#" }, { name: "Partners", href: "#" }
+            ]
+          }
+        ],
+        contact: {
+            title: "Contact",
+            info: [
+                { icon: "fas fa-envelope", text: "info@Rak.AI.com", href: "mailto:info@Rak.AI.com" },
+                { icon: "fas fa-phone", text: "+1 (234) 567-890", href: "tel:+1234567890" },
+                { icon: "fas fa-map-marker-alt", text: "123 AI Boulevard, San Francisco, CA 94105" }
+            ]
+        },
+        legal: {
+            copyright: `© ${new Date().getFullYear()} Rak.AI. All rights reserved.`,
+            links: [
+                { name: "Privacy Policy", href: "#" },
+                { name: "Terms of Service", href: "#" },
+                { name: "Cookie Policy", href: "#" }
+            ]
+        }
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPage();
+      setupEventListeners();
+    });
+
+    function renderPage() {
+      renderHeader();
+      renderHero();
+      renderStory();
+      renderTeam();
+      renderCTA();
+      renderFooter();
+    }
+
+    function renderHeader() {
+      const { logoText, navLinks, buttons } = pageData.header;
+
+      document.getElementById('logo-container').textContent = logoText;
+
+      const desktopNavContainer = document.getElementById('desktop-nav-links');
+      const mobileNavContainer = document.getElementById('mobile-nav-links');
+      let desktopNavHTML = '';
+      let mobileNavHTML = '';
+
+      navLinks.forEach(link => {
+        const activeDesktopClass = link.active ? 'text-indigo-600' : 'text-gray-700 hover:text-indigo-600';
+        const activeMobileClass = link.active ? 'text-indigo-600 bg-gray-50' : 'text-gray-800 hover:text-indigo-600 hover:bg-gray-50';
+
+        desktopNavHTML += `<li><a href="${link.href}" class="nav-link text-sm font-medium ${activeDesktopClass}">${link.name}</a></li>`;
+        mobileNavHTML += `<a href="${link.href}" class="block px-3 py-2 rounded-md text-base font-medium ${activeMobileClass}">${link.name}</a>`;
+      });
+      desktopNavContainer.innerHTML = desktopNavHTML;
+      
+      const headerButtonsDesktopContainer = document.getElementById('header-buttons-desktop');
+      let headerButtonsDesktopHTML = '';
+      buttons.forEach(button => {
+        headerButtonsDesktopHTML += `<button class="${button.class}">${button.name}</button>`;
+      });
+      headerButtonsDesktopContainer.innerHTML = headerButtonsDesktopHTML;
+
+      const mobileButtonsHTML = `
+        <div class="pt-4 pb-3 border-t border-gray-200">
+          <div class="flex items-center px-5 space-x-3">
+            ${buttons.map(button => `<button class="w-full ${button.class}">${button.name}</button>`).join('')}
+          </div>
+        </div>
+      `;
+      mobileNavContainer.innerHTML = mobileNavHTML + mobileButtonsHTML;
+    }
+
+    function renderHero() {
+        const { title, subtitle } = pageData.hero;
+        const heroContainer = document.getElementById('hero-content');
+        heroContainer.innerHTML = `
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate__animated animate__fadeInUp">
+                ${title}
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate__animated animate__fadeInUp animate__delay-1s">
+                ${subtitle}
+            </p>
+        `;
+    }
+
+    function renderStory() {
+        const { title, paragraphs, image } = pageData.story;
+        const storyContainer = document.getElementById('story-content');
+        storyContainer.innerHTML = `
+            <div class="lg:w-1/2">
+                <img src="${image}" alt="Our team working together" class="rounded-2xl shadow-xl w-full">
+            </div>
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">${title}</h2>
+                ${paragraphs.map(p => `<p class="text-gray-600 mb-4">${p}</p>`).join('')}
+            </div>
+        `;
+    }
+
+    function renderTeam() {
+        const { title, subtitle, members } = pageData.team;
+        
+        document.getElementById('team-header').innerHTML = `
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">${title}</h2>
+            <p class="max-w-2xl mx-auto text-xl text-gray-600">${subtitle}</p>
+        `;
+
+        const container = document.getElementById('team-members-container');
+        let membersHTML = '';
+        members.forEach(member => {
+            membersHTML += `
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center relative overflow-hidden">
+                    <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-indigo-100 shadow-lg">
+                        <img src="${member.image}" alt="${member.name}" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">${member.name}</h3>
+                    <p class="text-indigo-600 font-medium mb-3">${member.title}</p>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">${member.bio}</p>
+                    <div class="flex justify-center space-x-6">
+                        ${member.social.linkedin ? `<a href="${member.social.linkedin}" class="text-gray-400 hover:text-indigo-600 transition-colors duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>` : ''}
+                        ${member.social.email ? `<a href="${member.social.email}" class="text-gray-400 hover:text-indigo-600 transition-colors duration-300"><i class="fas fa-envelope text-xl"></i></a>` : ''}
+                    </div>
+                </div>
+            `;
+        });
+        container.innerHTML = membersHTML;
+    }
+
+    function renderCTA() {
+        const { title, subtitle, buttonText } = pageData.cta;
+        document.getElementById('cta-content').innerHTML = `
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">${title}</h2>
+            <p class="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">${subtitle}</p>
+            <button class="px-8 py-4 text-base font-medium rounded-lg bg-white text-indigo-600 hover:bg-gray-100 transition-colors shadow-md hover:shadow-lg">
+                ${buttonText} <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        `;
+    }
+
+    function renderFooter() {
+        const { about, linkColumns, contact, legal } = pageData.footer;
+
+        document.getElementById('footer-about').innerHTML = `
+            <div class="text-2xl font-bold bg-gradient-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent mb-4">${about.logoText}</div>
+            <p class="mb-4">${about.description}</p>
+            <div class="flex space-x-4">
+                ${about.socials.map(s => `<a href="${s.href}" class="text-gray-400 hover:text-white transition-colors"><i class="${s.icon} text-xl"></i></a>`).join('')}
+            </div>
+        `;
+        
+        document.getElementById('footer-product-links').innerHTML = `
+            <h3 class="font-semibold text-white mb-4">${linkColumns[0].title}</h3>
+            <ul class="space-y-2">
+                ${linkColumns[0].links.map(l => `<li><a href="${l.href}" class="hover:text-white transition-colors">${l.name}</a></li>`).join('')}
+            </ul>
+        `;
+
+        document.getElementById('footer-company-links').innerHTML = `
+            <h3 class="font-semibold text-white mb-4">${linkColumns[1].title}</h3>
+            <ul class="space-y-2">
+                ${linkColumns[1].links.map(l => `<li><a href="${l.href}" class="hover:text-white transition-colors">${l.name}</a></li>`).join('')}
+            </ul>
+        `;
+
+        document.getElementById('footer-contact').innerHTML = `
+            <h3 class="font-semibold text-white mb-4">${contact.title}</h3>
+            <ul class="space-y-3">
+                ${contact.info.map(c => `
+                    <li class="flex items-start">
+                        <i class="${c.icon} text-indigo-400 mr-2 mt-0.5"></i>
+                        ${c.href ? `<a href="${c.href}" class="hover:text-white transition-colors">${c.text}</a>` : `<span>${c.text}</span>`}
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+
+        document.getElementById('footer-legal').innerHTML = `
+            <p class="text-sm mb-4 md:mb-0">${legal.copyright}</p>
+            <div class="flex space-x-6">
+                ${legal.links.map(l => `<a href="${l.href}" class="text-sm hover:text-white transition-colors">${l.name}</a>`).join('')}
+            </div>
+        `;
+    }
+
+    function setupEventListeners() {
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = mobileMenuButton.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+      });
+    }
+
+  </script>
+</body>
+</html>
